@@ -43,7 +43,12 @@ namespace Translator.Code.Service.Translator
 
         public Dictionary<string, string> GetAvailableLangs(string lang)
         {
-            throw new NotImplementedException();
+            if (!_cache.IsSet("lang_" + lang))
+            {
+                _cache.Set("lang_" + lang, _translatorService.GetAvailableLangs(lang), 500);
+            }
+
+            return (Dictionary<string, string>)_cache.Get("lang_" + lang);
         }
 
         public List<Tuple<string, string>> GetTranslateDir()

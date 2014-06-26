@@ -46,5 +46,10 @@ namespace Translator.Controllers
 
             return View();
         }
+
+        public ActionResult Countries(string countryFrom)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

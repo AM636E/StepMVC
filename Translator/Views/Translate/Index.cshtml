@@ -20,7 +20,7 @@
         </select>
     </div>
     <div class="form-group col-md-2">
-        <select class="form-control" name="translateTo">
+        <select class="form-control" name="translateTo" data-ajax="true" data-ajax-mode="replace" data-ajax-update="[name=translateTo]"> 
             @if (languages != null)
             {
                 foreach (string key in languages.Keys)

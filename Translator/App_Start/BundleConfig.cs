@@ -9,7 +9,9 @@ namespace Translator
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/libraries").Include(
                         "~/Scripts/main.js",
                         "~/Scripts/jquery.elastic.source.js"));
 
@@ -31,6 +33,7 @@ namespace Translator
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-chosen.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
