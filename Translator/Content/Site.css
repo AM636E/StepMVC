@@ -21,12 +21,17 @@ textarea {
     text-align: justify;
     padding: 10px;
     border-radius: 5px;
-    min-height: 120px;
+    min-height: 134px;
+}
+
+#txtTranslateText, 
+#translate-result {
+    min-height: 134px;
 }
 
 #txtTranslateText {
     min-width: 100%;
-    min-height: 120px;
+    
 }
 .form-group {
     min-height: 50px;
