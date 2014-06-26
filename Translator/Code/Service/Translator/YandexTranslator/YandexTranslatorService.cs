@@ -10,11 +10,25 @@ namespace Translator.Code.Service.Translator.YandexTranslator
 {
     public class YandexTranslatorService : ITranslatorService
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private string baseUrl;
+        /// <summary>
+        /// 
+        /// </summary>
         private string apiKey;
+        /// <summary>
+        /// 
+        /// </summary>
         private string requestUri;
-        private Dictionary<string, string> languages;
 
+        /// <summary>
+        /// Initializes a new instance of YandexTranslatorService
+        /// Width your api key.
+        /// </summary>
+        /// <param name="baseUrl">Base url for api calls</param>
+        /// <param name="apiKey">Your Yandex.Translator Api key</param>
         public YandexTranslatorService(string baseUrl, string apiKey)
         {
             this.baseUrl = baseUrl;

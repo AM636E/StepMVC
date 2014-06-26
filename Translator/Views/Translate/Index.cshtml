@@ -1,11 +1,12 @@
 ﻿@{
     ViewBag.Title = "Translate";
     Dictionary<string, string> languages = ViewBag.Languages;
+    string selectedLang = ViewBag.SelectedLang;
 }
 
-<h2>Index</h2>
+<h2>Translator</h2>
 
-<form role="form" method="post" class="row">
+<form role="form" method="post" class="row" data-ajax="true" data-ajax-update="#translate-result .contents" data-ajax-mode="replace">
     <div class="form-group col-md-2">
         <select class="form-control" name="translateFrom">
             <option value="detect">Detect language</option>
@@ -19,13 +20,27 @@
         </select>
     </div>
     <div class="form-group col-md-2">
-        <select class="form-control" name="translateTo"></select>
+        <select class="form-control" name="translateTo">
+            @if (languages != null)
+            {
+                foreach (string key in languages.Keys)
+                {
+                    if (selectedLang == key)
+                    {
+                        <option value="@key" selected>@languages[key]</option>
+                    }
+                    else
+                    {
+                        <option value="@key">@languages[key]</option>
+                    }
+                }
+            }
+        </select>
     </div>
     <div class="form-group col-md-2">
-        <input type="submit" name="submit" id="btnTranslate" class="btn btn-default" />
+        <input type="submit" name="submit" id="btnTranslate" class="btn btn-default" value="Translate" />
     </div>
     <div class="col-lg-6 form-group">
-
     </div>
     <div class="form-group textarea col-md-6">
         @Html.TextArea("txtTranslateText", "", new { @class = "form-control elastic" })

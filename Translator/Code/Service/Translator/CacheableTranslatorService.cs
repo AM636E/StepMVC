@@ -7,10 +7,19 @@ using Translator.Code.Service.Cache;
 
 namespace Translator.Code.Service.Translator
 {
+    /// <summary>
+    /// Decorates a translator service to enable caching.
+    /// </summary>
     public class CacheableTranslatorService : ITranslatorService
     {
         private ICacheService _cache;
         private ITranslatorService _translatorService;
+
+        /// <summary>
+        /// Initializes a new instance of cachable translator service.
+        /// </summary>
+        /// <param name="service">service to decorate</param>
+        /// <param name="cache">cache provider</param>
         public CacheableTranslatorService(ITranslatorService service, ICacheService cache)
         {
             this._cache = cache;

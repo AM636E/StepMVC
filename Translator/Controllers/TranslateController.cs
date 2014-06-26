@@ -18,15 +18,28 @@ namespace Translator.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.SelectedLang = "";
+            if (System.Web.HttpContext.Current.Request.Cookies["SelectedLang"] != null)
+            {
+                ViewBag.SelectedLang = System.Web.HttpContext.Current.Request.Cookies["SelectedLang"].Value;
+            }
             ViewBag.Languages = this._translatorService.GetLanguages();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(string text)
+        public ActionResult Index(string txtTranslateText, string translateFrom, string translateTo)
         {
-            ViewBag.Text = _translatorService.Translate("", text, "uk");
-            if(Request.IsAjaxRequest())
+            HttpCookie cookie = new HttpCookie("SelectedLang", translateTo);
+            cookie.Expires = DateTime.Now.AddDays(10);
+            System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+            
+            if (translateTo == null)
+            {
+                translateTo = "uk";
+            }
+            ViewBag.Text = _translatorService.Translate("", txtTranslateText, translateTo);
+            if (Request.IsAjaxRequest())
             {
                 return PartialView("_Result");
             }
