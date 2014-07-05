@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.IO;
-//using TranslatorService;
+
 using Newtonsoft.Json;
+
 namespace Translator.Code.Service.Translator.YandexTranslator
 {
     public class YandexTranslatorService : ITranslatorService
@@ -25,7 +26,7 @@ namespace Translator.Code.Service.Translator.YandexTranslator
 
         /// <summary>
         /// Initializes a new instance of YandexTranslatorService
-        /// Width your api key.
+        /// With your api key.
         /// </summary>
         /// <param name="baseUrl">Base url for api calls</param>
         /// <param name="apiKey">Your Yandex.Translator Api key</param>
@@ -81,7 +82,7 @@ namespace Translator.Code.Service.Translator.YandexTranslator
 
             if (result.code != 200)
             {
-                throw new Exception(String.Format("Unable to translate. Code {0}", result.code));
+                throw new System.Exception(String.Format("Unable to translate. Code {0}", result.code));
             }
 
             return result.text[0];

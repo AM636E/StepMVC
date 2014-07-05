@@ -18,6 +18,18 @@ namespace Translator
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Translate", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Admin",
+                url: "admin/{action}",
+                defaults: new { controller = "Admin", action = "Users", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Users",
+                url: "admin/user/{id}/{action}",
+                defaults: new { controller = "Admin" }
+            );
         }
     }
 }

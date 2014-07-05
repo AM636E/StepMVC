@@ -36,3 +36,11 @@ textarea {
 .form-group {
     min-height: 50px;
 }
+
+.chosen-container-single .chosen-search input {
+    width: 88%;
+}
+
+.contents {
+    min-height: 134px;
+}

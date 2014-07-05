@@ -10,9 +10,8 @@ namespace Translator
         {
             var container = new UnityContainer();
 
-            container.RegisterType<Translator.Controllers.TranslateController>();
             ContainerBootstrapper.RegisterTypes(container);
-            
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
