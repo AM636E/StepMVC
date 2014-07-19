@@ -3,7 +3,7 @@ using Translator.Code.Service.Translator;
 using Translator.Code.Service.Translator.YandexTranslator;
 using Translator.Code.Service.Cache.Default;
 using TranslatorDataAccess;
-using TranslatorEntities;
+using TranslatorEntities = Translator.Domain;
 using Translator.Code.Manager.Security;
 using System.Configuration;
 namespace Translator

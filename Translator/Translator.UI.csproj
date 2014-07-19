@@ -210,7 +210,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-chosen.scss" />
     <Content Include="Content\bootstrap-chosen.less" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
@@ -279,13 +278,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TranslatorDataAccess\Translator.DataAccess.csproj">
-      <Project>{64254686-d598-4f35-ae75-436a2248e619}</Project>
-      <Name>Translator.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TranslatorEntities\Translator.Entities.csproj">
-      <Project>{3d9cc171-707a-40a7-b0c5-019473ee31f4}</Project>
-      <Name>Translator.Entities</Name>
+    <ProjectReference Include="..\Translator.Domain\Translator.Domain.csproj">
+      <Project>{84a602ee-076a-4ce7-b226-c343128a0545}</Project>
+      <Name>Translator.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

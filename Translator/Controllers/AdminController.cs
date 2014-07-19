@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using TranslatorDataAccess;
+using TranslatorEntities = Translator.Domain;
 
 namespace Translator.Controllers
 {

@@ -7,7 +7,7 @@ using System.Web.Security;
 using System.Data.Entity.Validation;
 
 using TranslatorDataAccess;
-using TranslatorEntities;
+using Translator.Domain;
 
 using Translator.Code.Helper;
 using Translator.Code.Manager.Security;

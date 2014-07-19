@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 
 using TranslatorDataAccess;
-using TranslatorEntities;
+using  Translator.Domain;
 
 using Translator.Code.Helper;
 using Translator.Code.Exception;

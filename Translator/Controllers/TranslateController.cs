@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Translator.Code.Service.Translator;
 using Translator.Code.Manager.Security;
 using TranslatorDataAccess;
-using TranslatorEntities;
+using  Translator.Domain;
 
 namespace Translator.Controllers
 {
@@ -71,7 +71,7 @@ namespace Translator.Controllers
                 ViewBag.Text = translated;
                 if (_user != null)
                 {
-                    _historyRepository.AddRecord(new TranslatorEntities.HistoryRecord()
+                    _historyRepository.AddRecord(new HistoryRecord()
                         {
                             SourceLanguage = translateFrom,
                             SourceText = txtTranslateText,

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TranslatorEntities;
+using Translator.Domain;
 
 
 namespace Translator.Code.Manager.Security
